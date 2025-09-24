@@ -1,0 +1,108 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="MeuApp.Views.MainWindow"
+        Width="800" Height="500"
+        Title="Meu App com Menu e Card">
+
+    <DockPanel>
+
+        <!-- Menu no topo -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Arquivo">
+                <MenuItem Header="_Novo" />
+                <MenuItem Header="_Abrir" />
+                <MenuItem Header="_Sair" />
+            </MenuItem>
+            <MenuItem Header="_Ajuda">
+                <MenuItem Header="_Sobre" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Grid com duas colunas: 20% e 80% -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="8*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Parte da esquerda (20%) -->
+            <Border Grid.Column="0" Background="#EEE" Padding="10">
+                <TextBlock Text="Menu lateral ou navegação" 
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Center"/>
+            </Border>
+
+            <!-- Parte da direita (80%) -->
+            <Border Grid.Column="1" Background="#CCC" Padding="10">
+                <Grid>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*" />
+                        <RowDefinition Height="6*" />
+                    </Grid.RowDefinitions>
+
+                    <!-- ROW CARDS -->
+                     <Border Grid.Row="0" Padding="10" Background="#F5F5F5">
+                        <ScrollViewer>
+                            <UniformGrid Columns="2" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                <!-- Card 1 -->
+                                <Border Background="White" BorderBrush="#DDD" BorderThickness="1" CornerRadius="10" Padding="20" Width="300" Height="120">
+                                    <StackPanel>
+                                        <TextBlock Text="📈 Vendas do Mês"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Margin="0 0 0 5"/>
+                                        <TextBlock Text="R$ 20.000,00"
+                                                FontSize="24"
+                                                FontWeight="SemiBold"
+                                                Foreground="DarkGreen"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Card 2 -->
+                                <Border Background="White" BorderBrush="#DDD" BorderThickness="1" CornerRadius="10" Padding="20" Width="300" Height="120">
+                                    <StackPanel>
+                                        <TextBlock Text="👤 Clientes Ativos"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Margin="0 0 0 5"/>
+                                        <TextBlock Text="1.250"
+                                                FontSize="24"
+                                                FontWeight="SemiBold"
+                                                Foreground="DarkBlue"/>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Card 3 -->
+                                <Border Background="White" BorderBrush="#DDD" BorderThickness="1" CornerRadius="10" Padding="20" Width="300" Height="120">
+                                    <StackPanel>
+                                        <TextBlock Text="💰 Receita"
+                                                FontSize="16"
+                                                FontWeight="Bold"
+                                                Margin="0 0 0 5"/>
+                                        <TextBlock Text="R$ 52.400,00"
+                                                FontSize="24"
+                                                FontWeight="SemiBold"
+                                                Foreground="DarkSlateGray"/>
+                                    </StackPanel>
+                                </Border>
+
+                            </UniformGrid>
+                        </ScrollViewer>
+                    </Border>
+
+          
+
+                    <!-- ROW INFOS -->
+                    <Border Grid.Row="1" Background="#EEE" Padding="10">
+                        <StackPanel>
+                            <TextBlock Text="Texto 1" />
+                            <TextBlock Text="Texto 2" />
+                        </StackPanel>
+                    </Border>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
